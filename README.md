@@ -12,8 +12,11 @@ Bu kapsamda yürütmüş olduğumuz çalışmalarda bir çok mekanik parça ve e
 2017 yılı itibari ile Trakya kalkınma ajansının katkıları ile çalışmalarımızı yürütmeye devam etmekteyiz. 
 
 Çıktığımız yolda sizlerin de desteklerini bekliyoruz.
+
 Phone numbers:
+
 Email: yildizhuseyin@gmail.com
+
 Address: Avcılar, İstanbul
 
 
@@ -35,6 +38,7 @@ Sizlerin çalışmalarını da burada görmekten mutluluk duyarız.
 
 
 OpenBot 
+
 OpenBot, 3 boyutlu yazıcı ile üretebileceğiniz modüler yapıya sahip bir eğitim robotudur.
 Basit tasarımının yanı sıra, tasarlanan farklı geliştirme parçaları kullanarak geliştirilebilir bir araçtır. Dilerseniz sitede bulunan modüler parçaların Stl dosyalarını indirdikten sonra aracınızı geliştirebilirsiniz.
 
