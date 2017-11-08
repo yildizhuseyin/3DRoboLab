@@ -1,4 +1,7 @@
 3D Salıncak / 3D Swing 
+Mekanik parçalardan oluşan salıncak modeli Solidworks programında modellenmiş ve Prusa I3 model printer ile baskı alınarak denenmiştir.
+Parçalar bir birine M5 civata ve somun ile bağlanmakta olup, bağlantı yerine göre civata uzunlukları değişebilir.
+Gerekli olan civata ve somunları en yakın hırdavatçı veya Bauhaus mağazalarından temin edebilirsiniz.
 
 Baskı Özellikleri / Print Properties
 
