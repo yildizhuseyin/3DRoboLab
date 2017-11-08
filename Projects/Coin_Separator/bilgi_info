@@ -1,0 +1,27 @@
+Bozuk Para Ayıracı / coin_Separator
+Bozuk paraların boyutlarına göre ayırmaya yarayan bir sistemdir. 
+1TL, 50krs, 25krs ve 10krs olarak 4 farklı parayı ayırabilir. 
+
+Nasıl Çalışır ? 
+Bozuk paralarınızı resimde olduğu gibi bir kenardan bıraktığınızda paranın boyutuna göre düşer. 
+Düzlemlerin eğik olması nedeni ile paralar yukarıdan aşağıya doğru hareket ederek ilerler. 
+
+Baskı Özellikleri / Print Properties
+
+Yazıcı Markası / Printer Brand:
+Prusa
+
+Yazıcı / Printer:
+Prusa Mk2
+
+Çözünürlük / Resolution:
+0.25
+
+Doluluk / Infill:
+%20
+
+Malzeme / Material
+PLA 
+
+Notlar / Notes:
+fg
