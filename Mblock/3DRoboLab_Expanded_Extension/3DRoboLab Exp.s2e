@@ -1,137 +1,335 @@
-{	"extensionName": "3DRoboLab Expended",
-	"description": "IR remote control, I2C - LCD Panel, Bluetooth,SoftwareSerial,",
+{
+	"extensionName": "3DRoboLab Expanded",
+	"description": "IR remote control, I2C - LCD Panel, Bluetooth,Color sensor, SoftwareSerial,",
 	"version": "1.0.0",
 	"author": "Hüseyin YILDIZ (yildizhuseyin@gmail.com)",
 	"homepage": "https://www.3drobolab.com",
-	"sort":0,
+	"sort": 0,
 	"extensionPort": 0,
-	"firmware":"1.0",
-	"javascriptURL":"js/3DRoboLab_Exp.js",
+	"firmware": "1.0",
+	"javascriptURL": "js/3DRoboLab_Exp.js",
 	"blockSpecs": [
-				
-		["B", "Check IR pin D: %n","ChechIR","7",
-		{"encode":"","setup":"","inc":"#include <IRremote.h>","def":"IRrecv irrecv({0});decode_results results;","work":"irrecv.decode(&results)","loop":""}],
-		
-		["R", "Read IR value D: %n", "ReadIR",7,
-		{"setup":"","inc":"#include <IRremote.h>","def":"IRrecv irrecv({0});decode_results results;","work":"results.value","loop":""}],
-					
-		["w", "LCD Set I2C %d.LCDcode Line: %d.LCDLine Col: %d.LCDcol ","LCDSet", "0x3f", 2,16,
-		{"setup":"LCD.begin();\nLCD.backlight();\nLCD.clear();\n","inc":"#include <LiquidCrystal_I2C.h>\n","def":"LiquidCrystal_I2C LCD({0} , {2}, {1});","work":"","loop":""}],
-		
-		["w", "LCD Set Cursor Row:%n Col:%n", "LCDCursor", 1,1,
-		{"setup":"","inc":"","def":"","work":"LCD.setCursor({1}-1,{0}-1);\n","loop":""}],
-		
+
+		["B", "Check IR pin D: %n", "ChechIR", "7",
+			{
+				"encode": "",
+				"setup": "",
+				"inc": "#include <IRremote.h>",
+				"def": "IRrecv irrecv({0});decode_results results;",
+				"work": "irrecv.decode(&results)",
+				"loop": ""
+			}
+		],
+
+		["R", "Read IR value D: %n", "ReadIR", 7,
+			{
+				"setup": "",
+				"inc": "#include <IRremote.h>",
+				"def": "IRrecv irrecv({0});decode_results results;",
+				"work": "results.value",
+				"loop": ""
+			}
+		],
+
+		["w", "LCD Set I2C %d.LCDcode Line: %d.LCDLine Col: %d.LCDcol ", "LCDSet", "0x3f", 2, 16,
+			{
+				"setup": "LCD.begin();\nLCD.backlight();\nLCD.clear();\n",
+				"inc": "#include <LiquidCrystal_I2C.h>\n",
+				"def": "LiquidCrystal_I2C LCD({0} , {2}, {1});",
+				"work": "",
+				"loop": ""
+			}
+		],
+
+		["w", "LCD Set Cursor Row:%n Col:%n", "LCDCursor", 1, 1,
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "LCD.setCursor({1}-1,{0}-1);\n",
+				"loop": ""
+			}
+		],
+
 		["w", "LCD Print %s", "LCDPrint", "Merhaba",
-		{"setup":"","inc":"","def":"","work":"LCD.print({0});\n","loop":""}],
-		
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "LCD.print({0});\n",
+				"loop": ""
+			}
+		],
+
 		["w", "LCD Gif Print %d.LCDgif", "LCDgif", 1,
-		{"setup":"","inc":"","def":"","work":"LCD.write({0});\n","loop":""}],		
-		
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "LCD.write({0});\n",
+				"loop": ""
+			}
+		],
+
 		["w", "LCD Blink %d.LCDBlink", "LCDBlink", "ON",
-		{"setup":"","inc":"","def":"","work":"if ({0}==0) LCD.noBlink(); if ({0}==1) LCD.blink();\n","loop":""}],
-		
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "if ({0}==0) LCD.noBlink(); if ({0}==1) LCD.blink();\n",
+				"loop": ""
+			}
+		],
+
 		["w", "LCD backlight turn %d.LCDBlink", "LCDbacklight", "ON",
-		{"setup":"","inc":"","def":"","work":"LCD.setBacklight({0});\n","loop":""}],
-		
-		["w", "LCD Clear", "LCDClear", 
-		{"setup":"","inc":"","def":"","work":"LCD.clear();\n","loop":""}],
-			
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "LCD.setBacklight({0});\n",
+				"loop": ""
+			}
+		],
+
+		["w", "LCD Clear", "LCDClear",
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "LCD.clear();\n",
+				"loop": ""
+			}
+		],
+
 		["w", "Define Bluetooth from Rx:%n Tx:%n BaudRate:%d.BoudRate", "BTDefine", 7, 8, 57600,
-		{"setup":"BTSerial.begin({2});\n","inc":"SoftwareSerial BTSerial({0},{1}); // RX, TX","def":"","work":"","loop":""}],		
+			{
+				"setup": "BTSerial.begin({2});\n",
+				"inc": "SoftwareSerial BTSerial({0},{1}); // RX, TX",
+				"def": "",
+				"work": "",
+				"loop": ""
+			}
+		],
 
 		["w", "Set Bluetooth BaudRate:%d.BoudRate", "BTBegin", 57600,
-		{"setup":"","inc":"","def":"","work":"BTSerial.begin({0});\n","loop":""}],
-		
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "BTSerial.begin({0});\n",
+				"loop": ""
+			}
+		],
+
 		["w", "Write Bluetooth msg: %s", "BTWrite", "Merhaba",
-		{"setup":"","inc":"","def":"","work":"BTSerial.println({0});\n","loop":""}],
-		
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "BTSerial.println({0});\n",
+				"loop": ""
+			}
+		],
+
 		["R", "Bluetooth available ?", "BTAvailable",
-		{"setup":"","inc":"","def":"","work":"BTSerial.available()","loop":""}],
-		
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "BTSerial.available()",
+				"loop": ""
+			}
+		],
+
 		["R", "Read Bluetooth (byte)", "BTRead",
-		{"setup":"","inc":"","def":"","work":"BTSerial.read()","loop":""}],
-		
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "BTSerial.read()",
+				"loop": ""
+			}
+		],
+
 		["R", "Read Bluetooth (line)", "BTReadLine",
-		{"setup":"","inc":"","def":"String BTVeri;","work":"BTSerial.readStringUntil('!').toInt()","loop":""}],
+			{
+				"setup": "",
+				"inc": "",
+				"def": "String BTVeri;",
+				"work": "BTSerial.readStringUntil('!').toInt()",
+				"loop": ""
+			}
+		],
+
+		["w", "Define RGB sensor from S0:%n S1:%n S2:%n S3:%n Out:%n", "RGBefine", 4, 5, 6, 7, 8,
+			{
+				"setup": "pinMode(S0, OUTPUT);\n pinMode(S1, OUTPUT);\n pinMode(S2, OUTPUT);\n pinMode(S3, OUTPUT);\n pinMode(sensorOut, INPUT);\n digitalWrite(S0, HIGH);\n digitalWrite(S1, LOW);\n",
+				"inc": "\n int S0={0};\n int S1={1};\n int S2={2};\n int S3={3};\n int sensorOut={4};\n",
+				"def": "int GetColor(int RCol) {if (RCol == 1) {\n digitalWrite(S2, LOW);\n digitalWrite(S3, LOW);\n return pulseIn(sensorOut, LOW);\n}\n if (RCol == 2) {\n digitalWrite(S2, HIGH);\n digitalWrite(S3, HIGH);\n return pulseIn(sensorOut, LOW);}\n if (RCol == 3) {\n digitalWrite(S2, LOW);\n digitalWrite(S3, HIGH);\n return pulseIn(sensorOut, LOW);}}",
+				"work": "",
+				"loop": " "
+			}
+		],
 		
-		["R", "SubString variable %n at %n to %n", "stringOnea",0,1,2,
-		{"setup":"","inc":"","def":"","work":"(String({0}).substring({1},{2})).toInt()","loop":""}]
-		
-		
-		
+		["R", "Read color C: %d.RGBColor", "RcolorRead", "RED",
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "GetColor ({0})",
+				"loop": ""
+			}
+		],
+
+		["R", "SubString variable %n at %n to %n", "stringOnea", 0, 1, 2,
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "(String({0}).substring({1},{2})).toInt()",
+				"loop": ""
+			}
+		]
+
+
+
 	],
 	"menus": {
-		"beats":["500","250","125","1000","2000","0"],
-		"servovalue":["0","45","90","135","180"],
-		"pwmvalue":["0","50","100","150","255"],
-		"Ledvalue":["0","25","50","75","100"],
-		"digital":["HIGH","LOW"],
-		"notes":["C2","D2","E2","F2","G2","A2","B2","C3","D3","E3","F3","G3","A3","B3","C4","D4","E4","F4","G4","A4","B4","C5","D5","E5","F5","G5","A5","B5","C6","D6","E6","F6","G6","A6","B6","C7","D7","E7","F7","G7","A7","B7","C8","D8"],
-		"beats":["Half","Quarter","Eighth","Whole","Double","Zero"],
-		"BoudRate":["110","600","2400","9600","57600", "115200"],
-		"LCDcode":["0x27","0x3f"],
-		"LCDLine":["1","2"], 
-		"LCDBlink":["ON","OFF"], 
-		"LCDgif":["Nota", "Saat", "Kalp", "Tik", "X", "Giriş"],
-		"LCDcol":["2","4","8","16","32","64"]
+		"beats": ["500", "250", "125", "1000", "2000", "0"],
+		"servovalue": ["0", "45", "90", "135", "180"],
+		"pwmvalue": ["0", "50", "100", "150", "255"],
+		"Ledvalue": ["0", "25", "50", "75", "100"],
+		"digital": ["HIGH", "LOW"],
+		"notes": ["C2", "D2", "E2", "F2", "G2", "A2", "B2", "C3", "D3", "E3", "F3", "G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5", "B5", "C6", "D6", "E6", "F6", "G6", "A6", "B6", "C7", "D7", "E7", "F7", "G7", "A7", "B7", "C8", "D8"],
+		"beatss": ["Half", "Quarter", "Eighth", "Whole", "Double", "Zero"],
+		"BoudRate": ["110", "600", "2400", "9600", "57600", "115200"],
+		"LCDcode": ["0x27", "0x3f"],
+		"LCDLine": ["1", "2"],
+		"LCDBlink": ["ON", "OFF"],
+		"LCDgif": ["Nota", "Saat", "Kalp", "Tik", "X", "Giriş"],
+		"LCDcol": ["2", "4", "8", "16", "32", "64"],
+		"RGBColor": ["RED", "GREEN", "BLUE"]
 	},
-	"values":{
-		"run":2,
-		"get":1,
-		"digital":30,
-		"analog":31,
-		"pwm":32,
-		"servo_pin":33,
-		"tone":34,
-		"timer":50,
-		"HIGH":1,"LOW":0,
-		"B0":31,"C1":33,"D1":37,"E1":41,"F1":44,"G1":49,"A1":55,"B1":62,
-			"C2":65,"D2":73,"E2":82,"F2":87,"G2":98,"A2":110,"B2":123,
-			"C3":131,"D3":147,"E3":165,"F3":175,"G3":196,"A3":220,"B3":247,
-			"C4":262,"D4":294,"E4":330,"F4":349,"G4":392,"A4":440,"B4":494,
-			"C5":523,"D5":587,"E5":659,"F5":698,"G5":784,"A5":880,"B5":988,
-			"C6":1047,"D6":1175,"E6":1319,"F6":1397,"G6":1568,"A6":1760,"B6":1976,
-			"C7":2093,"D7":2349,"E7":2637,"F7":2794,"G7":3136,"A7":3520,"B7":3951,
-			"C8":4186,"D8":4699,
-		"Half":500,"Quarter":250,"Eighth":125,"Whole":1000,"Double":2000,"Zero":0,
-		"Nota":1, "Saat":2, "Kalp":3, "Tik":5, "X":6, "Giriş":7,
-		"ON":1,"OFF":0
+	"values": {
+		"run": 2,
+		"get": 1,
+		"digital": 30,
+		"analog": 31,
+		"pwm": 32,
+		"servo_pin": 33,
+		"tone": 34,
+		"timer": 50,
+		"HIGH": 1,
+		"LOW": 0,
+		"B0": 31,
+		"C1": 33,
+		"D1": 37,
+		"E1": 41,
+		"F1": 44,
+		"G1": 49,
+		"A1": 55,
+		"B1": 62,
+		"C2": 65,
+		"D2": 73,
+		"E2": 82,
+		"F2": 87,
+		"G2": 98,
+		"A2": 110,
+		"B2": 123,
+		"C3": 131,
+		"D3": 147,
+		"E3": 165,
+		"F3": 175,
+		"G3": 196,
+		"A3": 220,
+		"B3": 247,
+		"C4": 262,
+		"D4": 294,
+		"E4": 330,
+		"F4": 349,
+		"G4": 392,
+		"A4": 440,
+		"B4": 494,
+		"C5": 523,
+		"D5": 587,
+		"E5": 659,
+		"F5": 698,
+		"G5": 784,
+		"A5": 880,
+		"B5": 988,
+		"C6": 1047,
+		"D6": 1175,
+		"E6": 1319,
+		"F6": 1397,
+		"G6": 1568,
+		"A6": 1760,
+		"B6": 1976,
+		"C7": 2093,
+		"D7": 2349,
+		"E7": 2637,
+		"F7": 2794,
+		"G7": 3136,
+		"A7": 3520,
+		"B7": 3951,
+		"C8": 4186,
+		"D8": 4699,
+		"Half": 500,
+		"Quarter": 250,
+		"Eighth": 125,
+		"Whole": 1000,
+		"Double": 2000,
+		"Zero": 0,
+		"Nota": 1,
+		"Saat": 2,
+		"Kalp": 3,
+		"Tik": 5,
+		"X": 6,
+		"Giriş": 7,
+		"ON": 1,
+		"OFF": 0,
+		"RED": 1,
+		"GREEN": 2,
+		"BLUE": 3
 	},
-	"translators":{
-		"latin5":{
-			"3DRoboLab Programs":"3DRoboLab Program",
-			"Read (PullUp) digital pin D:%n":"Sayısal pin D:%n (PullUp) oku",
-			"Read Temperature pin A:%n":"Sıcaklık oku pin A:%n",
-			"Read Light pin A:%n":"Işık oku pin A:%n",
-			"Set Light pin D:%n output as %d.Ledvalue":"Led pin D:%n değerini %d.Ledvalue yap",
-			"Set RGB pin R:%n G:%n B:%n values R:%d.Ledvalue G:%d.Ledvalue B:%d.Ledvalue":"RGB Led pin R:%n G:%n B:%n değerini R:%d.Ledvalue G:%d.Ledvalue B:%d.Ledvalue yap",
-			"Check IR pin D: %n":"IR veri var mı D: %n",
-			"Read IR value D: %n":"IR kumanda oku D: %n",
-			
-			"Define Bluetooth from Rx:%n Tx:%n BaudRate:%d.BoudRate":"Bluetooth Tanımla Rx:%n Tx:%n BaudRate:%d.BoudRate ayarla",
-			"Set Bluetooth BaudRate:%d.BoudRate":"Bluetooth BaudRate:%d.BoudRate ayarla",
-			"Set Serial BaudRate:%d.BoudRate":"Serial BaudRate:%d.BoudRate ayarla",
-			"Write Bluetooth msg: %s":"Bluetooth veri yaz %s",
-			"Write Serial msg: %s":"Serial veri yaz %s",
-			"Bluetooth available ?":"Bluetooth veri var mı ?",
-			"Serial available ?":"Serial veri var mı ?",
-			"Read Bluetooth (byte)":"Bluetooth byte oku",
-			"Read Serial (byte)":"Serial byte oku",
-			"Read Bluetooth (line)":"Bluetooth satır oku",
-			"Read Serial (line)":"Serial satır oku",
-			"SubString variable %n at %n to %n":"Karakter ayır: %n değişkeni  %n den %n e",
-			"Hello":"Merhaba",
-			"/* 3D Robotics Laboratory: www.3drobolab.com */":"/* 3D Robotik Labaratuarı: www.3drobolab.com */",
-			
-			"LCD Set I2C %d.LCDcode Line: %d.LCDLine Col: %d.LCDcol ":"LCD yi I2C ayarla %d.LCDcode Satır: %d.LCDLine Sütun: %d.LCDcol ",
-			"LCD Set Cursor Row:%n Col:%n":"LCD başlangıç Satır:%n Sütun:%n",
-			"LCD Print %s":"LCD ye yaz %s",
-			"LCD backlight turn %d.LCDBlink":"LCD arkaplan ışığı %d.LCDBlink",
-			"LCD Clear":"LCD temizle",
-			"LCD Gif Print %d.LCDgif":"LCD Gif yaz %d.LCDgif",
-			"blink":"Blink",
-					
+	"translators": {
+		"latin5": {
+			"3DRoboLab Programs": "3DRoboLab Program",
+			"Read (PullUp) digital pin D:%n": "Sayısal pin D:%n (PullUp) oku",
+			"Read Temperature pin A:%n": "Sıcaklık oku pin A:%n",
+			"Read Light pin A:%n": "Işık oku pin A:%n",
+			"Set Light pin D:%n output as %d.Ledvalue": "Led pin D:%n değerini %d.Ledvalue yap",
+			"Set RGB pin R:%n G:%n B:%n values R:%d.Ledvalue G:%d.Ledvalue B:%d.Ledvalue": "RGB Led pin R:%n G:%n B:%n değerini R:%d.Ledvalue G:%d.Ledvalue B:%d.Ledvalue yap",
+			"Check IR pin D: %n": "IR veri var mı D: %n",
+			"Read IR value D: %n": "IR kumanda oku D: %n",
+
+			"Define Bluetooth from Rx:%n Tx:%n BaudRate:%d.BoudRate": "Bluetooth Tanımla Rx:%n Tx:%n BaudRate:%d.BoudRate ayarla",
+			"Set Bluetooth BaudRate:%d.BoudRate": "Bluetooth BaudRate:%d.BoudRate ayarla",
+			"Set Serial BaudRate:%d.BoudRate": "Serial BaudRate:%d.BoudRate ayarla",
+			"Write Bluetooth msg: %s": "Bluetooth veri yaz %s",
+			"Write Serial msg: %s": "Serial veri yaz %s",
+			"Bluetooth available ?": "Bluetooth veri var mı ?",
+			"Serial available ?": "Serial veri var mı ?",
+			"Read Bluetooth (byte)": "Bluetooth byte oku",
+			"Read Serial (byte)": "Serial byte oku",
+			"Read Bluetooth (line)": "Bluetooth satır oku",
+			"Read Serial (line)": "Serial satır oku",
+			"SubString variable %n at %n to %n": "Karakter ayır: %n değişkeni  %n den %n e",
+			"Hello": "Merhaba",
+			"/* 3D Robotics Laboratory: www.3drobolab.com */": "/* 3D Robotik Labaratuarı: www.3drobolab.com */",
+
+			"LCD Set I2C %d.LCDcode Line: %d.LCDLine Col: %d.LCDcol ": "LCD yi I2C ayarla %d.LCDcode Satır: %d.LCDLine Sütun: %d.LCDcol ",
+			"LCD Set Cursor Row:%n Col:%n": "LCD başlangıç Satır:%n Sütun:%n",
+			"LCD Print %s": "LCD ye yaz %s",
+			"LCD backlight turn %d.LCDBlink": "LCD arkaplan ışığı %d.LCDBlink",
+			"LCD Clear": "LCD temizle",
+			"LCD Gif Print %d.LCDgif": "LCD Gif yaz %d.LCDgif",
+			"Define RGB sensor from S0:%n S1:%n S2:%n S3:%n Out:%n": "RGB sensör tanımla S0:%n S1:%n S2:%n S3:%n Out:%n",
+			"RED": "KIRMIZI",
+			"GREEN": "YEŞİL",
+			"BLUE": "MAVİ",
+			"Read color C: %d.RGBColor": "Renk oku C: %d.RGBColor",
+			"blink": "Blink"
 		}
-	
+
 	}
 }
