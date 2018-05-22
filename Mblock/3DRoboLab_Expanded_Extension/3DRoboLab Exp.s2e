@@ -1,12 +1,12 @@
 {
 	"extensionName": "3DRoboLab Expanded",
 	"description": "IR remote control, I2C - LCD Panel, Bluetooth,Color sensor, SoftwareSerial,",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Hüseyin YILDIZ (yildizhuseyin@gmail.com)",
 	"homepage": "https://www.3drobolab.com",
 	"sort": 0,
 	"extensionPort": 0,
-	"firmware": "1.0",
+	"firmware": "1.0.0",
 	"javascriptURL": "js/3DRoboLab_Exp.js",
 	"blockSpecs": [
 
@@ -14,8 +14,8 @@
 			{
 				"encode": "",
 				"setup": "",
-				"inc": "#include <IRremote.h>",
-				"def": "IRrecv irrecv({0});decode_results results;",
+				"inc": "\n #include <IRremote.h>",
+				"def": "IRrecv irrecv({0});\n decode_results results;",
 				"work": "irrecv.decode(&results)",
 				"loop": ""
 			}
@@ -24,17 +24,27 @@
 		["R", "Read IR value D: %n", "ReadIR", 7,
 			{
 				"setup": "",
-				"inc": "#include <IRremote.h>",
-				"def": "IRrecv irrecv({0});decode_results results;",
+				"inc": "\n #include <IRremote.h>",
+				"def": "IRrecv irrecv({0});\n decode_results results;",
 				"work": "results.value",
 				"loop": ""
 			}
 		],
+		["w", "IR Resume", "IRResume",
+			{
+				"setup": "",
+				"inc": "",
+				"def": "",
+				"work": "irrecv.resume();\n",
+				"loop": ""
+			}
+		],
+
 
 		["w", "LCD Set I2C %d.LCDcode Line: %d.LCDLine Col: %d.LCDcol ", "LCDSet", "0x3f", 2, 16,
 			{
-				"setup": "LCD.begin();\nLCD.backlight();\nLCD.clear();\n",
-				"inc": "#include <LiquidCrystal_I2C.h>\n",
+				"setup": "LCD.begin();\nLCD.backlight();\nLCD.clear();\n irrecv.enableIRIn();\n",
+				"inc": "\n #include <LiquidCrystal_I2C.h>\n",
 				"def": "LiquidCrystal_I2C LCD({0} , {2}, {1});",
 				"work": "",
 				"loop": ""
@@ -104,7 +114,7 @@
 		["w", "Define Bluetooth from Rx:%n Tx:%n BaudRate:%d.BoudRate", "BTDefine", 7, 8, 57600,
 			{
 				"setup": "BTSerial.begin({2});\n",
-				"inc": "SoftwareSerial BTSerial({0},{1}); // RX, TX",
+				"inc": "\n SoftwareSerial BTSerial({0},{1}); // RX, TX",
 				"def": "",
 				"work": "",
 				"loop": ""
@@ -301,7 +311,7 @@
 			"Set RGB pin R:%n G:%n B:%n values R:%d.Ledvalue G:%d.Ledvalue B:%d.Ledvalue": "RGB Led pin R:%n G:%n B:%n değerini R:%d.Ledvalue G:%d.Ledvalue B:%d.Ledvalue yap",
 			"Check IR pin D: %n": "IR veri var mı D: %n",
 			"Read IR value D: %n": "IR kumanda oku D: %n",
-
+			"IR Resume":"IR tekrar oku",
 			"Define Bluetooth from Rx:%n Tx:%n BaudRate:%d.BoudRate": "Bluetooth Tanımla Rx:%n Tx:%n BaudRate:%d.BoudRate ayarla",
 			"Set Bluetooth BaudRate:%d.BoudRate": "Bluetooth BaudRate:%d.BoudRate ayarla",
 			"Set Serial BaudRate:%d.BoudRate": "Serial BaudRate:%d.BoudRate ayarla",
