@@ -1,0 +1,17 @@
+Açıklama
+Parça tasarımlarımızda isimleri parça özelliklerini yansıtır. Bu nedenle aradığınız parçaların özelliklerini kullanarak ihtiyacınız olan parçaları bulabilir, karşınıza çıkan parçaların isimlerinden özelliklerini anlayabilirsiniz.
+
+Bir parça standardı oluşturmak istediğimiz için notasyon ve isimlendirmede de bir yapı kurmaya çalıştık. Bu nedenle kullandığınız parçaların özelliklerine dikkat edin.
+
+P Parçası için İsimlendirme 
+
+Resimde bir parçanın numaralandırmasını görüyorsunuz. Böyle bir P Parçasında yapılan isimlendirme şu şekilde yapılmıştır.
+
+Özellik	Kod	Anlamı	Açıklama
+Parça Türü :	P100	Plaka şeklinde ana tasarım	Parçaların ana tasarımları 0000 ile ifade edilir ancak parçalar üzerinde değişiklik yapılır ise temel parça numarasında buradaki rakamlar değişir. 
+Delik Vida Çapı :	D005	M5 vida kullanılmalı	Parçaları birleştirmek için tercih edilecek vida çapını ifade eder. İlk tasarımlarımız M5 için, ancak ilerleyen dönemlerde küçük robotik uygulamalar için M3 vida içinde tasarımlarımız olacak. 
+Parça Kalınlığı :	T03	Parça 3 mm kalınlıkta	Parça kalınlıkları değişken olabilir. Bu durumda burada bulunan kod değişecektir. 
+X yönünde delik sayısı :	02	X yönünde 2 adet deliğe sahip.	Parçalara göre delik sayısı değişecektir. 
+Y yönünde delik sayısı :	01	Y yönünde 1 adet deliğe sahip.	Parçalara göre delik sayısı değişecektir.
+Z yönünde delik sayısı :	00	Z yönünde delik yok.	Parçalara göre delik sayısı değişecektir.
+Dilerseniz STL Dosyalarını kendi istediğiniz gibi değiştirerek bizlere gönderebilir ve parça çeşitliliğine katkı sağlayabilirsiniz. 
